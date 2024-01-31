@@ -1,5 +1,5 @@
 {
-	"geode": "2.0.0-beta.12",
+	"geode": "2.0.0",
 	"gd": {
         "win": "2.204",
 		"android": "2.205"
@@ -9,6 +9,7 @@
 	"name": "Golden Best",
 	"developer": "Firee",
 	"description": "A mod that changes the percentage to gold when you are achieving a new best!",
+    "repository": "https://github.com/FireMario211/Golden-Best",
     "settings": {
         "practice-mode": {
             "name": "Show in Practice Mode",
