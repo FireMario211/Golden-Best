@@ -4,7 +4,7 @@
         "win": "2.204",
 		"android": "2.205"
     },
-	"version": "v1.0.0",
+	"version": "v1.0.1",
 	"id": "firee.GoldenBest",
 	"name": "Golden Best",
 	"developer": "Firee",
@@ -14,6 +14,12 @@
         "practice-mode": {
             "name": "Show in Practice Mode",
             "description": "Whether or not to change the percentage while in practice mode",
+            "type": "bool",
+            "default": true
+        },
+        "platformer-mode": {
+            "name": "Show in Platformer Mode",
+            "description": "Whether or not to change the time to be gold while playing a platformer level.",
             "type": "bool",
             "default": true
         }
