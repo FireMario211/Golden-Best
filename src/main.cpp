@@ -6,6 +6,7 @@ using namespace geode::prelude;
 class $modify(PlayLayer) {
     CCLabelBMFont* percentLabel;
     float oldScale;
+    float oldAnchorPoint = -1.0F;
     void updateProgressbar() {
         PlayLayer::updateProgressbar();
         if (m_fields->percentLabel == nullptr) {
@@ -23,6 +24,7 @@ class $modify(PlayLayer) {
         } else {
             auto showInPractice = Mod::get()->getSettingValue<bool>("practice-mode");
             if (!m_level->isPlatformer()) {
+                float anchorPointX = m_fields->percentLabel->getAnchorPoint().x;
                 if (!showInPractice && m_isPracticeMode) {
                     m_fields->percentLabel->setFntFile("bigFont.fnt");
                     m_fields->percentLabel->setScale(m_fields->oldScale);
@@ -32,13 +34,15 @@ class $modify(PlayLayer) {
                 if (percent > (m_level->m_normalPercent + 1)) {
                     m_fields->percentLabel->setFntFile("goldFont.fnt");
                     m_fields->percentLabel->setScale(m_fields->oldScale + 0.15F);
-                    m_fields->percentLabel->setAnchorPoint({0.0,0.45}); // since robert wont allow us to change the Y pos, we will just have to change the anchor point!
+                    m_fields->percentLabel->setAnchorPoint({anchorPointX,m_fields->oldAnchorPoint-0.05F}); // since robert wont allow us to change the Y pos, we will just have to change the anchor point!
                     //m_fields->percentLabel->setPositionY(m_fields->yPosOLD + 8);
-                    m_fields->percentLabel->setPositionY(8);
                 } else {
                     m_fields->percentLabel->setFntFile("bigFont.fnt");
                     m_fields->percentLabel->setScale(m_fields->oldScale);
-                    m_fields->percentLabel->setAnchorPoint({0,0.5});
+                    if (m_fields->oldAnchorPoint == -1.0F) {
+                        m_fields->oldAnchorPoint = m_fields->percentLabel->getAnchorPoint().y;
+                    }
+                    m_fields->percentLabel->setAnchorPoint({anchorPointX,m_fields->oldAnchorPoint});
                 }
             }
         }
@@ -48,6 +52,7 @@ class $modify(PlayLayer) {
         if (m_fields->percentLabel == nullptr) return; // prevent crashes
         auto showInPractice = Mod::get()->getSettingValue<bool>("practice-mode");
         if (m_level->isPlatformer() && Mod::get()->getSettingValue<bool>("platforer-mode")) {
+            float anchorPointX = m_fields->percentLabel->getAnchorPoint().x;
             if (!showInPractice && m_isPracticeMode) {
                 m_fields->percentLabel->setFntFile("bigFont.fnt");
                 m_fields->percentLabel->setScale(m_fields->oldScale);
@@ -56,11 +61,14 @@ class $modify(PlayLayer) {
             if (p0 > m_level->m_bestTime) {
                 m_fields->percentLabel->setFntFile("goldFont.fnt");
                 m_fields->percentLabel->setScale(m_fields->oldScale + 0.15F);
-                m_fields->percentLabel->setAnchorPoint({0.0,0.45});
+                m_fields->percentLabel->setAnchorPoint({anchorPointX,m_fields->oldAnchorPoint-0.05F});
             } else {
                 m_fields->percentLabel->setFntFile("bigFont.fnt");
                 m_fields->percentLabel->setScale(m_fields->oldScale);
-                m_fields->percentLabel->setAnchorPoint({0,0.5});
+                if (m_fields->oldAnchorPoint == -1.0F) {
+                    m_fields->oldAnchorPoint = m_fields->percentLabel->getAnchorPoint().y;
+                }
+                m_fields->percentLabel->setAnchorPoint({anchorPointX,m_fields->oldAnchorPoint});
             }
         }
     }
