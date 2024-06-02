@@ -34,8 +34,8 @@
 	"incompatibilities": [
   		{
     			"id": "firee.GoldenBest",
-    			"version": "*", // match any version of the old mod
-    			"importance": "superseded" // tell the index that this mod will replace my current one
+    			"version": "*",
+    			"importance": "superseded"
   		}
 	]
 }
