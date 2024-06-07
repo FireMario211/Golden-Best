@@ -1,3 +1,6 @@
+# v1.0.5
+- Added 2.206 support
+- Temporarily remove iOS support
 # v1.0.4 
 - Added iOS support
 - Added Disable test mode setting
