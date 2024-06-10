@@ -1,3 +1,5 @@
+# v1.0.6 
+- Support Geode alpha 2
 # v1.0.5
 - Added 2.206 support
 - Temporarily remove iOS support
