@@ -8,6 +8,7 @@
 	"id": "firee.goldenbest",
 	"name": "Golden Best",
 	"developer": "Firee",
+    "tags": ["gameplay", "enhancement", "utility", "offline"],
 	"description": "A mod that changes the percentage to gold when you are achieving a new best!",
     	"repository": "https://github.com/FireMario211/Golden-Best",
     	"settings": {
