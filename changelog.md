@@ -1,3 +1,5 @@
+# v1.0.7
+- Support Geode 3.0.0-beta.1
 # v1.0.6 
 - Support Geode alpha 2
 # v1.0.5
