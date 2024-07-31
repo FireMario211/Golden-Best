@@ -1,14 +1,15 @@
 {
-	"geode": "3.0.0-beta.1",
+	"geode": "3.4.0",
 	"gd": {
-        "win": "2.206",
+		"win": "2.206",
+		"mac": "2.206",
 		"android": "2.206"
-    },
+	},
 	"version": "v1.0.8",
 	"id": "firee.goldenbest",
 	"name": "Golden Best",
 	"developer": "Firee",
-    "tags": ["gameplay", "enhancement", "utility", "offline"],
+	"tags": ["gameplay", "enhancement", "utility", "offline"],
 	"description": "A mod that changes the percentage to gold when you are achieving a new best!",
     	"repository": "https://github.com/FireMario211/Golden-Best",
     	"settings": {
