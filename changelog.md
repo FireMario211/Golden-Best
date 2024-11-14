@@ -1,3 +1,7 @@
+# v1.0.10
+- Update version of Geode to v4.0.0-alpha.1
+# v1.0.9
+- Update version of Geode to v3.4.0
 # v1.0.8
 - Support Mac OS
 # v1.0.7
