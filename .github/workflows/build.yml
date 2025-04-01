@@ -50,7 +50,7 @@ jobs:
       - uses: geode-sdk/build-geode-mod/combine@main
         id: build
 
-      - uses: actions/upload-artifact@v3
+      - uses: actions/upload-artifact@v4
         with:
           name: Golden Best Build Output
           path: ${{ steps.build.outputs.build-output }}
