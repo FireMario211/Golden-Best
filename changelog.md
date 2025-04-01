@@ -1,3 +1,9 @@
+# v1.1.0
+- Added custom colors for percentages
+- Fixed potential incompats with other mods that have a percentage in the end
+- Added Sapphire SDK support
+# v1.0.11
+- Update version of Geode to v4.0.0-beta.1
 # v1.0.10
 - Update version of Geode to v4.0.0-alpha.1
 # v1.0.9
@@ -10,9 +16,9 @@
 - Support Geode alpha 2
 # v1.0.5
 - Added 2.206 support
-- Temporarily remove iOS support
+- Temporarily remove Sapphire support
 # v1.0.4 
-- Added iOS support
+- Added Sapphire SDK support
 - Added Disable test mode setting
 # v1.0.3 
 - Fixed issue with the percent not being turn golden if a level uses the "End Trigger"
