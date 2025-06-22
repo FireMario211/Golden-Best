@@ -1,3 +1,5 @@
+# v1.1.1
+- Bump geode version
 # v1.1.0
 - Added custom colors for percentages
 - Fixed potential incompats with other mods that have a percentage in the end
