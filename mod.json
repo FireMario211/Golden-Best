@@ -1,12 +1,12 @@
 {
-	"geode": "4.6.0",
+	"geode": "4.10.0",
 	"gd": {
 		"win": "2.2074",
 		"mac": "2.2074",
 		"android": "2.2074",
 		"ios": "2.2074"
 	},
-	"version": "v1.1.1",
+	"version": "v1.1.2",
 	"id": "firee.goldenbest",
 	"name": "Golden Best",
 	"developer": "Firee",
@@ -18,19 +18,19 @@
 			"name": "Show in Practice Mode",
 			"description": "Whether or not to change the percentage while in practice mode",
 			"type": "bool",
-			"default": true
+			"default": false
 		},
 		"platformer-mode": {
 			"name": "Show in Platformer Mode",
 			"description": "Whether or not to change the time to be gold while playing a platformer level.",
 			"type": "bool",
-			"default": true
+			"default": false
 		},
 		"test-mode": {
 			"name": "Show in Startpos Mode",
 			"description": "Whether or not to change the percentage / time to be gold while playing the level with Startpos or in Test Mode.",
 			"type": "bool",
-			"default": true
+			"default": false
 		},
 		"enable-colors": {
 			"name": "Enable Custom Colors",
