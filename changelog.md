@@ -1,3 +1,5 @@
+# v1.1.3
+- Bump geode version
 # v1.1.2
 - Make "show in practice mode/startpos mode/platformer mode" settings off by default.
 - Bump geode version
