@@ -13,41 +13,48 @@ jobs:
       matrix:
         config:
         - name: Windows
-          target: win
-        - name: macOS (Intel)
-          target: macintel
-        - name: macOS (M1)
-          target: macm1
+          os: windows-latest
+        - name: macOS
+          os: macos-latest
         - name: Android32
-          target: android32
+          os: ubuntu-latest
+          target: Android32
         - name: Android64
-          target: android64
+          os: ubuntu-latest
+          target: Android64
         - name: iOS
-          target: ios
+          os: macos-latest
+          target: iOS
         
 
     name: ${{ matrix.config.name }}
-    runs-on: ubuntu-latest
+    runs-on: ${{ matrix.config.os }}
 
     steps:
       - uses: actions/checkout@v4
         with:
           submodules: 'recursive'
-      
+
+      - name: Update LLVM windows
+        run: choco upgrade llvm
+        if: matrix.config.os == 'windows-latest'
+          
       - name: Build the mod
-        continue-on-error: ${{ matrix.config.target == 'macintel' || matrix.config.target == 'macm1' || matrix.config.target == 'ios' || matrix.config.target == 'android32' }}
-        uses: geode-sdk/build-geode-mod-docker@main
+        uses: geode-sdk/build-geode-mod@main
         with:
+          combine: true
           target: ${{ matrix.config.target }}
-          upload: true
           sdk: 6.0.0-beta.1
 
   package:
     name: Package builds
     runs-on: ubuntu-latest
-    if: '!cancelled()'
     needs: ['build']
     steps:
-      - uses: geode-sdk/build-geode-mod-docker/merge@main
+      - uses: geode-sdk/build-geode-mod/combine@main
+        id: build
+
+      - uses: actions/upload-artifact@v4
         with:
-          upload: true
+          name: Golden Best Build Output
+          path: ${{ steps.build.outputs.build-output }}
