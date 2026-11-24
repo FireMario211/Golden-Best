@@ -1,3 +1,6 @@
+# v1.1.5
+- Bump geode version
+- Hopefully fix android issue
 # v1.1.4
 - Bump geode version
 # v1.1.3

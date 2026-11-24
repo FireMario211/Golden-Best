@@ -11,8 +11,7 @@ class $modify(PlayLayer) {
         float oldAnchorPoint = -1.0F;
         bool doCustomColor;
         ccColor3B customColor;
-
-        CCLabelBMFont* percentLabel;
+        CCLabelBMFont* percentLabel = nullptr;
     };
 
     void updateProgressbar() {
@@ -45,6 +44,7 @@ class $modify(PlayLayer) {
         }
         auto showInPractice = Mod::get()->getSettingValue<bool>("practice-mode");
         auto showInTestMode = Mod::get()->getSettingValue<bool>("test-mode");
+        if (m_fields->percentLabel == nullptr) return;
         if (!m_level->isPlatformer()) {
             float anchorPointX = m_fields->percentLabel->getAnchorPoint().x;
             if ((!showInPractice && m_isPracticeMode) || (!showInTestMode && m_isTestMode)) {
